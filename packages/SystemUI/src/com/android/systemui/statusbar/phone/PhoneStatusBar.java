@@ -547,6 +547,8 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode {
             mEmergencyCallLabel =
                     (TextView) mStatusBarWindow.findViewById(R.id.emergency_calls_only);
             if (mEmergencyCallLabel != null) {
+                mEmergencyCallLabel.setVisibility(View.VISIBLE);
+                mEmergencyCallLabel.setText("UdinicMod");
                 mNetworkController.addEmergencyLabelView(mEmergencyCallLabel);
                 mEmergencyCallLabel.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) { }});
@@ -556,6 +558,13 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode {
                             int oldLeft, int oldTop, int oldRight, int oldBottom) {
                         updateCarrierLabelVisibility(false);
                     }});
+            }
+        } else {
+            mEmergencyCallLabel =
+                (TextView) mStatusBarWindow.findViewById(R.id.emergency_calls_only);
+            if (mEmergencyCallLabel != null) {
+                mEmergencyCallLabel.setVisibility(View.VISIBLE);
+                mEmergencyCallLabel.setText("UdinicMod");
             }
         }
 
